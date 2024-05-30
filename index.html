@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Saúde e Bem-Estar</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #ff4081;
+        }
+        .question {
+            display: none;
+            margin-bottom: 20px;
+        }
+        .question.active {
+            display: block;
+        }
+        .question h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            background: #6200ea;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .options button:hover {
+            background: #3700b3;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: #f50057;
+        }
+        .link {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        .link a {
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz de Saúde e Bem-Estar</h1>
+
+        <div class="question active" id="question1">
+            <h2>1. Você está buscando formas naturais e eficazes de emagrecer?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(1)">Com certeza</button></li>
+                <li><button onclick="nextQuestion(1)">Estou curiosa</button></li>
+                <li><button onclick="nextQuestion(1)">Isso me interessa</button></li>
+                <li><button onclick="nextQuestion(1)">Quero saber mais</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question2">
+            <h2>2. Gostaria de aprender a preparar receitas saudáveis e saborosas?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(2)">Adoraria</button></li>
+                <li><button onclick="nextQuestion(2)">Isso parece ótimo</button></li>
+                <li><button onclick="nextQuestion(2)">Estou interessada</button></li>
+                <li><button onclick="nextQuestion(2)">Quero experimentar</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question3">
+            <h2>3. Está interessada em manter uma rotina de exercícios simples e eficazes?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(3)">Claro</button></li>
+                <li><button onclick="nextQuestion(3)">Quero tentar</button></li>
+                <li><button onclick="nextQuestion(3)">Parece bom</button></li>
+                <li><button onclick="nextQuestion(3)">Estou aberta a isso</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question4">
+            <h2>4. Você já tentou emagrecer antes e não teve sucesso?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(4)">Já passei por isso</button></li>
+                <li><button onclick="nextQuestion(4)">Preciso de ajuda</button></li>
+                <li><button onclick="nextQuestion(4)">Quero tentar novamente</button></li>
+                <li><button onclick="nextQuestion(4)">Estou procurando soluções</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question5">
+            <h2>5. Sente dificuldade em manter a motivação para seguir uma rotina saudável?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(5)">Frequentemente</button></li>
+                <li><button onclick="nextQuestion(5)">Isso acontece comigo</button></li>
+                <li><button onclick="nextQuestion(5)">Às vezes é difícil</button></li>
+                <li><button onclick="nextQuestion(5)">Estou procurando motivação</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question6">
+            <h2>6. Você sonha em ter uma vida mais saudável e equilibrada?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(6)">É meu objetivo</button></li>
+                <li><button onclick="nextQuestion(6)">Sempre quis isso</button></li>
+                <li><button onclick="nextQuestion(6)">Isso me inspira</button></li>
+                <li><button onclick="nextQuestion(6)">Estou em busca disso</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question7">
+            <h2>7. Gostaria de se sentir mais confiante com sua aparência?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(7)">Com certeza</button></li>
+                <li><button onclick="nextQuestion(7)">Isso é importante para mim</button></li>
+                <li><button onclick="nextQuestion(7)">Eu gostaria</button></li>
+                <li><button onclick="nextQuestion(7)">Quero melhorar</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question8">
+            <h2>8. Quer aprender a cuidar melhor da sua pele de forma natural?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(8)">Adoraria</button></li>
+                <li><button onclick="nextQuestion(8)">Isso me interessa</button></li>
+                <li><button onclick="nextQuestion(8)">Sempre procuro por isso</button></li>
+                <li><button onclick="nextQuestion(8)">Quero saber como</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question9">
+            <h2>9. Acredita que um guia completo com dicas práticas pode te ajudar a alcançar seus objetivos de saúde?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(9)">Acredito</button></li>
+                <li><button onclick="nextQuestion(9)">Isso é útil</button></li>
+                <li><button onclick="nextQuestion(9)">Com certeza</button></li>
+                <li><button onclick="nextQuestion(9)">Quero tentar</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question10">
+            <h2>10. Gostaria de ter acesso a um plano que inclui alimentação, exercícios e cuidados com a pele?</h2>
+            <ul class="options">
+                <li><button onclick="nextQuestion(10)">Isso é perfeito</button></li>
+                <li><button onclick="nextQuestion(10)">Adoraria ter isso</button></li>
+                <li><button onclick="nextQuestion(10)">Isso é ideal</button></li>
+                <li><button onclick="nextQuestion(10)">Preciso disso</button></li>
+            </ul>
+        </div>
+
+        <div class="question" id="question11">
+            <h2>11. Quer descobrir como você pode ter esses benefícios?</h2>
+            <button class="submit-button" onclick="redirectToSite()">Descubra Aqui</button>
+        </div>
+    </div>
+
+    <script>
+        function nextQuestion(current) {
+            var currentQuestion = document.getElementById('question' + current);
+            var nextQuestion = document.getElementById('question' + (current + 1));
+            currentQuestion.classList.remove('active');
+            if (nextQuestion) {
+                nextQuestion.classList.add('active');
+            }
+        }
+
+        function redirectToSite() {
+            window.location.href = "https://beleza-organica.pages.net.br";
+        }
+    </script>
+</body>
+</html>
